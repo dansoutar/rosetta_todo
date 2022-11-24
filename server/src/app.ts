@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import * as dotenv from "dotenv";
+import bodyParser from "body-parser";
 
 import { userRouter } from "./routes/user.routes";
 import { authRouter } from "./routes/auth.routes";
@@ -9,6 +10,9 @@ import { itemRouter } from "./routes/item.routes";
 dotenv.config();
 
 const app: Application = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
