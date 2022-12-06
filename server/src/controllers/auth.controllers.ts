@@ -22,22 +22,18 @@ export const registerUser = (req: Request, res: Response) => {
 }
 
 export const loginUser = async (req: Request, res: Response) => {
-  const { username, password } = req.body
+  const { username, password: requestPassword } = req.body
 
-  const dbUser = await db('users')
-    .where({ name: username })
-    .select()
-    .then((result) => result[0])
+  const dbUser = await db('users').where({ name: username })
 
   if (!dbUser) return res.status(400).json({ message: 'User does not exist' })
 
-  bcrypt.compare(password, dbUser.password).then((match) => {
+  bcrypt.compare(requestPassword, dbUser[0].password).then((match) => {
     if (!match) return res.status(400).json({ message: 'Wrong Credentials' })
 
-    const accessToken = createToken(dbUser)
-    res.cookie('access-token', accessToken)
+    const accessToken = createToken(dbUser[0])
 
-    return res.status(400).json({ message: 'Logged in!' })
+    return res.status(400).json({ message: 'Logged in!', jwtAuthToken: accessToken })
   })
 }
 

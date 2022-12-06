@@ -1,0 +1,450 @@
+{
+  "info": {
+    "_postman_id": "9a55d623-1b2b-4fa9-9a1c-4e65fa7668eb",
+    "name": "TODO Requests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "7736229"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "John Doe",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "johndoe@example.test",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{uri}}/api/user/:id",
+              "host": ["{{uri}}"],
+              "path": ["api", "user", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{uri}}/api/user/:id",
+              "host": ["{{uri}}"],
+              "path": ["api", "user", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "List",
+      "item": [
+        {
+          "name": "Get Lists",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{uri}}/api/list",
+              "host": ["{{uri}}"],
+              "path": ["api", "list"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{uri}}/api/list/:id",
+              "host": ["{{uri}}"],
+              "path": ["api", "list", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create List",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "value": "List 1",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "This is the first list.",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{uri}}/api/list",
+              "host": ["{{uri}}"],
+              "path": ["api", "list"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update List",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "value": "List 1 update",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "This is the first list updated.",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{uri}}/api/list/:id",
+              "host": ["{{uri}}"],
+              "path": ["api", "list", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "7"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete List",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{uri}}/api/list/:id",
+              "host": ["{{uri}}"],
+              "path": ["api", "list", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "item": [
+        {
+          "name": "Get Items",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{uri}}/api/list/:list_id/item",
+              "host": ["{{uri}}"],
+              "path": ["api", "list", ":list_id", "item"],
+              "variable": [
+                {
+                  "key": "list_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Item",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{uri}}/api/list/:list_id/item/:item_id",
+              "host": ["{{uri}}"],
+              "path": ["api", "list", ":list_id", "item", ":item_id"],
+              "variable": [
+                {
+                  "key": "list_id",
+                  "value": "1"
+                },
+                {
+                  "key": "item_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Item",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "value": "title1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{uri}}/api/list/:list_id/item",
+              "host": ["{{uri}}"],
+              "path": ["api", "list", ":list_id", "item"],
+              "variable": [
+                {
+                  "key": "list_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Item",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "value": "New Title",
+                  "type": "text"
+                },
+                {
+                  "key": "done",
+                  "value": "true",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{uri}}/api/list/:list_id/item/:item_id",
+              "host": ["{{uri}}"],
+              "path": ["api", "list", ":list_id", "item", ":item_id"],
+              "variable": [
+                {
+                  "key": "list_id",
+                  "value": "1"
+                },
+                {
+                  "key": "item_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Item",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{uri}}/api/list/:list_id/item/:item_id",
+              "host": ["{{uri}}"],
+              "path": ["api", "list", ":list_id", "item", ":item_id"],
+              "variable": [
+                {
+                  "key": "list_id",
+                  "value": "1"
+                },
+                {
+                  "key": "item_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Register",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "John Doe",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "johndoe@example.test",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "password",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{uri}}/api/auth/register",
+          "host": ["{{uri}}"],
+          "path": ["api", "auth", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": ["pm.collectionVariables.set(\"access_token\", pm.response.json().access_token);"],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "johndoe@example.test",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "password",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{uri}}/api/auth/login",
+          "host": ["{{uri}}"],
+          "path": ["api", "auth", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{uri}}/api/auth/logout",
+          "host": ["{{uri}}"],
+          "path": ["api", "auth", "logout"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{access_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "uri",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "access_token",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

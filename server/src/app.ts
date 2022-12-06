@@ -21,6 +21,4 @@ app.use('/api/user', userRouter)
 app.use('/api/list', listRouter)
 app.use('/api/list/:list_id/item', itemRouter)
 
-app.listen(process.env.PORT, () =>
-  console.log(`API is listening on ${process.env.PORT}`)
-)
+app.listen(process.env.PORT, () => console.log(`API is listening on ${process.env.PORT}`))
